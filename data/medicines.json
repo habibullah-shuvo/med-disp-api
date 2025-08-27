@@ -1,0 +1,323 @@
+[
+  {
+    "id": "disp002",
+    "name": "Napa Extend",
+    "category": "Painkiller",
+    "price": 6,
+    "stock": 7,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png",
+    "quantity": 1
+  },
+  {
+    "id": "disp003",
+    "name": "Napa",
+    "category": "Painkiller",
+    "price": 2,
+    "stock": 33,
+    "image": "https://medex.com.bd/storage/images/packaging/napa-500-mg-tablet-95324450053-i1-jtmMTho0xPmKADM1kMTq.jpg"
+  },
+  {
+    "id": "disp004",
+    "name": "Metril",
+    "category": "Antibiotic",
+    "price": 7,
+    "stock": 39,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp005",
+    "name": "Amodis",
+    "category": "Antibiotic",
+    "price": 8,
+    "stock": 41,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp006",
+    "name": "Cevit",
+    "category": "Vitamin",
+    "price": 3,
+    "stock": 19,
+    "image": "https://i.ibb.co/L8sLw5Z/vitamins-generic.png"
+  },
+  {
+    "id": "disp007",
+    "name": "Anclog 75 mg",
+    "category": "Cardiovascular",
+    "price": 10,
+    "stock": 29,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp008",
+    "name": "Nexum Mups 20 mg",
+    "category": "Gastric",
+    "price": 7,
+    "stock": 70,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp009",
+    "name": "Anzitor 10 mg",
+    "category": "Cardiovascular",
+    "price": 12,
+    "stock": 25,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp010",
+    "name": "Carva 75 mg",
+    "category": "Cardiovascular",
+    "price": 9,
+    "stock": 35,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp011",
+    "name": "Angilock 25 mg",
+    "category": "Cardiovascular",
+    "price": 11,
+    "stock": 33,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp012",
+    "name": "Nebita 2.5 mg",
+    "category": "Cardiovascular",
+    "price": 5,
+    "stock": 48,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp013",
+    "name": "Lipired 200 mg",
+    "category": "Cardiovascular",
+    "price": 15,
+    "stock": 22,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp014",
+    "name": "Dimerol MR 60 mg",
+    "category": "Diabetic",
+    "price": 18,
+    "stock": 28,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp015",
+    "name": "Emperol 10 mg",
+    "category": "Diabetic",
+    "price": 14,
+    "stock": 31,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp016",
+    "name": "Linerol 2.5/500 M",
+    "category": "Diabetic",
+    "price": 20,
+    "stock": 20,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp017",
+    "name": "Rovast 10 mg",
+    "category": "Cardiovascular",
+    "price": 13,
+    "stock": 37,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp018",
+    "name": "Filofar 30 mg",
+    "category": "Vitamin",
+    "price": 4,
+    "stock": 80,
+    "image": "https://i.ibb.co/L8sLw5Z/vitamins-generic.png"
+  },
+  {
+    "id": "disp019",
+    "name": "Abetis 10 mg",
+    "category": "Diabetic",
+    "price": 16,
+    "stock": 29,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp020",
+    "name": "Maxima Mups 20mg",
+    "category": "Gastric",
+    "price": 8,
+    "stock": 65,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp021",
+    "name": "Betacor 2.5 mg",
+    "category": "Cardiovascular",
+    "price": 9,
+    "stock": 42,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp022",
+    "name": "Ecosprin 81 mg",
+    "category": "Cardiovascular",
+    "price": 3,
+    "stock": 95,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp023",
+    "name": "Neutrum Gold",
+    "category": "Vitamin",
+    "price": 25,
+    "stock": 50,
+    "image": "https://i.ibb.co/L8sLw5Z/vitamins-generic.png"
+  },
+  {
+    "id": "disp024",
+    "name": "Orsaline-N",
+    "category": "Saline",
+    "price": 6,
+    "stock": 150,
+    "image": "https://i.ibb.co/n6z47nJ/saline-generic.png"
+  },
+  {
+    "id": "disp025",
+    "name": "Tasty Saline",
+    "category": "Saline",
+    "price": 7,
+    "stock": 130,
+    "image": "https://i.ibb.co/n6z47nJ/saline-generic.png"
+  },
+  {
+    "id": "disp026",
+    "name": "Adhesive Bandages",
+    "category": "First Aid",
+    "price": 15,
+    "stock": 75,
+    "image": "https://i.ibb.co/4pQMXt8/bandage-generic.png"
+  },
+  {
+    "id": "disp027",
+    "name": "Povidone Iodine",
+    "category": "First Aid",
+    "price": 12,
+    "stock": 60,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp028",
+    "name": "Medical Scissors",
+    "category": "First Aid",
+    "price": 45,
+    "stock": 25,
+    "image": "https://i.ibb.co/4pQMXt8/bandage-generic.png"
+  },
+  {
+    "id": "disp029",
+    "name": "Gauze Bandages",
+    "category": "First Aid",
+    "price": 8,
+    "stock": 90,
+    "image": "https://i.ibb.co/4pQMXt8/bandage-generic.png"
+  },
+  {
+    "id": "disp030",
+    "name": "Medical Tape",
+    "category": "First Aid",
+    "price": 10,
+    "stock": 80,
+    "image": "https://i.ibb.co/4pQMXt8/bandage-generic.png"
+  },
+  {
+    "id": "disp031",
+    "name": "Alcohol Pads",
+    "category": "First Aid",
+    "price": 6,
+    "stock": 120,
+    "image": "https://i.ibb.co/4pQMXt8/bandage-generic.png"
+  },
+  {
+    "id": "disp032",
+    "name": "Thermometer",
+    "category": "First Aid",
+    "price": 85,
+    "stock": 15,
+    "image": "https://i.ibb.co/4pQMXt8/bandage-generic.png"
+  },
+  {
+    "id": "disp033",
+    "name": "Antiseptic Cream",
+    "category": "First Aid",
+    "price": 18,
+    "stock": 55,
+    "image": "https://i.ibb.co/3kXpYvY/pills-generic.png"
+  },
+  {
+    "id": "disp034",
+    "name": "Elastic Bandage",
+    "category": "First Aid",
+    "price": 22,
+    "stock": 40,
+    "image": "https://i.ibb.co/4pQMXt8/bandage-generic.png"
+  },
+  {
+    "id": "disp035",
+    "name": "Cotton Swabs",
+    "category": "First Aid",
+    "price": 5,
+    "stock": 100,
+    "image": "https://unigloves.de/wp-content/uploads/2018/07/560-x00_wattestbchen_02.jpg"
+  },
+  {
+    "id": "disp0067",
+    "name": "nabilaz",
+    "category": "norio",
+    "price": 2,
+    "stock": 20,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFxGaW99JlA1ZCNEChWseKLaW_V_VS0213oQ&s"
+  },
+  {
+    "id": "disp0075",
+    "name": "yaugug",
+    "category": "Vitamin",
+    "price": 2,
+    "stock": 4,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFxGaW99JlA1ZCNEChWseKLaW_V_VS0213oQ&s"
+  },
+  {
+    "id": "test",
+    "name": "ggg",
+    "category": "gggg",
+    "price": 10,
+    "stock": 20,
+    "image": "https://fsd.fsf"
+  },
+  {
+    "id": "testttt",
+    "name": "teet",
+    "category": "test",
+    "price": 10,
+    "stock": 10,
+    "image": "http://sff.sdf"
+  },
+  {
+    "id": "disp0079",
+    "name": "house",
+    "category": "ueha",
+    "price": 5,
+    "stock": 5,
+    "image": "https://medshadow.org/wp-content/uploads/2012/11/medicine-scaled.jpeg"
+  },
+  {
+    "id": "disp0077",
+    "name": "house",
+    "category": "hg",
+    "price": 5,
+    "stock": 654,
+    "image": "https://medshadow.org/wp-content/uploads/2012/11/medicine-scaled.jpeg"
+  }
+]

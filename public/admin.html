@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel</title>
+  <style>
+    body {
+      background: #f4f6f9;
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      color: #1a1a1a;
+    }
+
+    .login-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .admin-panel {
+      display: none;
+    }
+
+    .admin-panel.active {
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: 600;
+      color: #2b2b2b;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      margin: 0.5rem 0 0.25rem;
+      display: block;
+    }
+
+    select, input, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #d0d6dd;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #3e7eff;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #2c65db;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .success {
+      color: #2e7d32;
+    }
+
+    .error {
+      color: #c62828;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    #message {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Login Section -->
+  <div id="login-section" class="login-container">
+    <h2>Admin Login</h2>
+    <form id="login-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+    <div id="login-message"></div>
+  </div>
+
+  <!-- Admin Panel Section -->
+  <div id="admin-panel" class="admin-panel">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+      <h2 style="margin: 0;">Admin Panel</h2>
+      <button id="logout-btn" style="width: auto; padding: 8px 16px; background: #dc3545; font-size: 0.9rem;">Logout</button>
+    </div>
+
+  <div class="section">
+    <label for="mode">Select Mode</label>
+    <select id="mode">
+      <option value="restock">Restock Existing Item</option>
+      <option value="add">Add New Item</option>
+    </select>
+  </div>
+
+  <form id="admin-form">
+    <div id="restock-fields">
+      <label for="medicine-name">Medicine Name</label>
+      <select id="medicine-name" required></select>
+
+      <label for="quantity-restock">Quantity</label>
+      <input type="number" id="quantity-restock"  required />
+    </div>
+
+    <div id="add-fields" class="hidden">
+      <label for="id">Medicine ID</label>
+      <input type="text" id="id" required />
+
+      <label for="name">Name</label>
+      <input type="text" id="name" required />
+
+      <label for="category">Category</label>
+      <input type="text" id="category" required />
+
+      <label for="price">Price</label>
+      <input type="number" id="price" step="0.01" min="0" required />
+
+      <label for="image">Image URL</label>
+      <input type="url" id="image" required />
+
+      <label for="quantity-add">Quantity</label>
+      <input type="number" id="quantity-add" min="1" required />
+    </div>
+
+    <button type="submit" id="submit-btn">Submit</button>
+  </form>
+
+  <div id="message"></div>
+  </div>
+
+  <script>
+    // Login functionality
+    const loginSection = document.getElementById('login-section');
+    const adminPanel = document.getElementById('admin-panel');
+    const loginForm = document.getElementById('login-form');
+    const loginMessage = document.getElementById('login-message');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    // Show login message
+    function showLoginMessage(text, type = 'error') {
+      loginMessage.innerHTML = `<p class="${type}">${text}</p>`;
+    }
+
+    // Handle login
+    function handleLogin(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      
+      if (username === 'admin' && password === '1234') {
+        loginSection.style.display = 'none';
+        adminPanel.classList.add('active');
+        showLoginMessage('', 'success');
+        toggleMode(); // Initialize admin panel
+      } else {
+        showLoginMessage('Invalid username or password', 'error');
+      }
+    }
+
+    // Handle logout
+    function handleLogout() {
+      adminPanel.classList.remove('active');
+      loginSection.style.display = 'block';
+      loginForm.reset();
+      form.reset();
+      clearMessage();
+      showLoginMessage('', 'success');
+    }
+
+    // Login event listeners
+    loginForm.addEventListener('submit', handleLogin);
+    logoutBtn.addEventListener('click', handleLogout);
+
+    // Original admin panel code
+    const form = document.getElementById('admin-form');
+    const modeSelect = document.getElementById('mode');
+    const addFields = document.getElementById('add-fields');
+    const restockFields = document.getElementById('restock-fields');
+    const message = document.getElementById('message');
+    const nameDropdown = document.getElementById('medicine-name');
+    const submitBtn = document.getElementById('submit-btn');
+
+    // Clear message function
+    function clearMessage() {
+      message.innerHTML = '';
+    }
+
+    // Show message function
+    function showMessage(text, type = 'error') {
+      message.innerHTML = `<p class="${type}">${text}</p>`;
+    }
+
+    // Load medicines for restock dropdown
+    async function loadMedicines() {
+      try {
+        const res = await fetch('/api/medicines');
+        if (!res.ok) throw new Error('Failed to fetch medicines');
+        
+        const data = await res.json();
+        nameDropdown.innerHTML = '<option value="">Select a medicine...</option>';
+        
+        data.forEach(med => {
+          const option = document.createElement('option');
+          option.value = med.id;
+          option.textContent = med.name;
+          nameDropdown.appendChild(option);
+        });
+      } catch (err) {
+        console.error("Failed to load medicines:", err);
+        showMessage('Failed to load medicines. Please refresh the page.', 'error');
+      }
+    }
+
+    // Toggle between add and restock modes
+    function toggleMode() {
+      const mode = modeSelect.value;
+      clearMessage();
+      
+      if (mode === 'add') {
+        addFields.classList.remove('hidden');
+        restockFields.classList.add('hidden');
+        
+        // Remove required from restock fields
+        document.getElementById('medicine-name').removeAttribute('required');
+        document.getElementById('quantity-restock').removeAttribute('required');
+        
+        // Add required to add fields
+        document.getElementById('id').setAttribute('required', '');
+        document.getElementById('name').setAttribute('required', '');
+        document.getElementById('category').setAttribute('required', '');
+        document.getElementById('price').setAttribute('required', '');
+        document.getElementById('image').setAttribute('required', '');
+        document.getElementById('quantity-add').setAttribute('required', '');
+        
+      } else {
+        addFields.classList.add('hidden');
+        restockFields.classList.remove('hidden');
+        
+        // Add required to restock fields
+        document.getElementById('medicine-name').setAttribute('required', '');
+        document.getElementById('quantity-restock').setAttribute('required', '');
+        
+        // Remove required from add fields
+        document.getElementById('id').removeAttribute('required');
+        document.getElementById('name').removeAttribute('required');
+        document.getElementById('category').removeAttribute('required');
+        document.getElementById('price').removeAttribute('required');
+        document.getElementById('image').removeAttribute('required');
+        document.getElementById('quantity-add').removeAttribute('required');
+        
+        loadMedicines();
+      }
+    }
+
+    // Validate add form data
+    function validateAddData(data) {
+      const errors = [];
+      
+      if (!data.id?.trim()) errors.push('Medicine ID is required');
+      if (!data.name?.trim()) errors.push('Medicine name is required');
+      if (!data.category?.trim()) errors.push('Category is required');
+      if (!data.image?.trim()) errors.push('Image URL is required');
+      if (isNaN(data.price) || data.price < 0) errors.push('Valid price is required');
+      if (isNaN(data.quantity) ) errors.push('Valid quantity is required');
+      
+      return errors;
+    }
+
+    // Validate restock form data
+    function validateRestockData(data) {
+      const errors = [];
+      
+      if (!data.id) errors.push('Please select a medicine');
+      if (isNaN(data.quantity) ) errors.push('Valid quantity is required');
+      
+      return errors;
+    }
+
+    // Handle form submission
+    async function handleSubmit(e) {
+      e.preventDefault();
+      
+      const mode = modeSelect.value;
+      let data = {};
+      let errors = [];
+      
+      // Disable submit button
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Processing...';
+      
+      try {
+        if (mode === 'add') {
+          // Collect add form data
+          const id = document.getElementById('id').value.trim();
+          const name = document.getElementById('name').value.trim();
+          const category = document.getElementById('category').value.trim();
+          const price = parseFloat(document.getElementById('price').value);
+          const image = document.getElementById('image').value.trim();
+          const quantity = parseInt(document.getElementById('quantity-add').value);
+
+          data = { id, name, category, price, image, quantity };
+          errors = validateAddData(data);
+
+        } else {
+          // Collect restock form data
+          const medId = nameDropdown.value;
+          const quantity = parseInt(document.getElementById('quantity-restock').value);
+
+          data = { id: medId, quantity };
+          errors = validateRestockData(data);
+        }
+
+        // Show validation errors
+        if (errors.length > 0) {
+          showMessage(errors.join('. '), 'error');
+          return;
+        }
+
+        // Send request to server
+        const res = await fetch("/api/stock/update", {
+          method: "POST",
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          const medicineName = result.medicine?.name || result.medicine?.id || 'Item';
+          const action = mode === 'add' ? 'Added' : 'Restocked';
+          showMessage(`${action} successfully: ${medicineName}`, 'success');
+          
+          // Reset form
+          form.reset();
+          
+          // Switch back to restock mode
+          modeSelect.value = 'restock';
+          toggleMode();
+          
+        } else {
+          showMessage(`Error: ${result.error || result.message || 'Unknown error occurred'}`, 'error');
+        }
+        
+      } catch (err) {
+        console.error('Submit error:', err);
+        showMessage('Network error. Please check your connection and try again.', 'error');
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit';
+      }
+    }
+
+    // Event listeners
+    modeSelect.addEventListener('change', toggleMode);
+    form.addEventListener('submit', handleSubmit);
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      // Show login section first
+      loginSection.style.display = 'block';
+      adminPanel.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
